@@ -1,0 +1,46 @@
+﻿@model List<Student>
+@{
+    ViewData["Title"] = "GetAll";
+}
+
+
+<div class="text-center">
+    <h1>Student List</h1>
+</div>
+
+<form asp-controller="Home" asp-action="GetAll" method="get">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                @* <th>Id</th> *@
+                <th>Student Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    @* <th>@item.Id</th> *@
+                    <th>@item.std_Id</th>
+                    <th>@item.Name</th>
+                    <th>@item.Age</th>
+                    <th>@item.Email</th>
+                    <th>
+                        <a role="button" asp-controller="Home" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                    </th>
+
+                    <th>
+                        <a role="button" asp-controller="Home" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                    </th>
+
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</form>

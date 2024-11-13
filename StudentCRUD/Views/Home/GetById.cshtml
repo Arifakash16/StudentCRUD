@@ -1,0 +1,86 @@
+﻿@model Student
+@{
+    ViewData["Title"] = "GetById";
+}
+
+<div class="text-center">
+    <h1>Student Details</h1>
+</div>
+
+<form method="get" asp-controller="Home" asp-action="GetById">
+    <div class="form-group">
+        <label for="Id" class="form-label">Id</label>
+        <input type="text" id="Id" name="id" class="form-control" placeholder="Enter your Id" value="@Model?.Id"/>
+    </div>
+
+    <div class="form-group mt-2">
+        <input type="submit"  value="Submit" class="btn btn-primary">
+    </div>
+</form>
+
+<br />
+
+@if(ViewData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+           @ViewData["ErrorMessage"]
+    </div>
+}
+
+@if(Model != null)
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+
+                <th>@Model.Id</th>
+                <th>@Model.Name</th>
+                <th>@Model.Age</th>
+                <th>@Model.Email</th>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+}
+else
+{
+    <p>No student data available</p>
+}
+
+@* <form asp-controller="Home" asp-action="GetbyId" asp-route-id="Id" method="get">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+            <tr>
+
+                <th>@Model.Id</th>
+                <th>@Model.Name</th>
+                <th>@Model.Age</th>
+                <th>@Model.Email</th>
+
+            </tr>
+            
+        </tbody>
+
+    </table>
+</form>
+ *@
