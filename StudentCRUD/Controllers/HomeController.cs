@@ -26,6 +26,9 @@ namespace StudentCRUD.Controllers
         [HttpPost]
         public IActionResult Create(Student student)
         {
+            student.CreatedAt = DateTime.Now;
+            //student.UpdatedAt = DateTime.Now;
+          
             if (ModelState.IsValid)
             {
                 try
@@ -119,6 +122,7 @@ namespace StudentCRUD.Controllers
                 studentSearch.Name = student.Name;
                 studentSearch.Age = student.Age;
                 studentSearch.Email = student.Email;
+                studentSearch.UpdatedAt = DateTime.Now;
 
                 using var transaction = _session.BeginTransaction();
                 _session.Update(studentSearch);
