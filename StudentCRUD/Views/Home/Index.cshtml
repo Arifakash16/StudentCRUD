@@ -5,7 +5,21 @@
 }
 
 <div class="form-group mt-2">
-    <a role="button" asp-controller="Home" asp-action="Create" class="btn btn-primary">Add Student</a>
+    <a role="button" asp-controller="Home" asp-action="Create" class="btn btn-primary">Add Student with Model Binding</a>
+    <br />
+    <br />
+    <a role="button" asp-controller="Home" asp-action="SerializedJSON" class="btn btn-primary">Add Student with SerializeFormJSON</a>
+
+    @* <br />
+    <br />
+    <a role="button" asp-controller="Home" asp-action="Create" class="btn btn-primary">Add Student with FormData</a>
+    <br />
+    <br />
+    <a role="button" asp-controller="Home" asp-action="Create" class="btn btn-primary">Add Student with Html BeginForm</a>
+    <br />
+    <br />
+    <a role="button" asp-controller="Home" asp-action="Create" class="btn btn-primary">Add Student with Ajax BeginForm</a>  *@
+
     <br />
     <br />
     <a role="button" asp-controller="Home" asp-action="GetAll" class="btn btn-primary">Show Student</a>

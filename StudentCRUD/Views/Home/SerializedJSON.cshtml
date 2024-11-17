@@ -1,13 +1,12 @@
 ﻿@model Student
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "SerializedJSON";
 }
 
-<h1>Model Binding</h1>
+<h1>Serialized with JSON</h1>
 
-
-<form asp-action="Create" asp-controller="Home" id="StudentCreate" mehod="post" class="container mt-5">
+<form id="StudentSerializedJSON" mehod="post" class="container mt-5">
     <div class="form-group">
         <label for="std_Id" class="form-label">Student Id</label>
         <input type="text" id="std_Id" name="std_Id" class="form-control" placeholder="Enter your student Id">
@@ -32,10 +31,10 @@
         <span asp-validation-for="Email" style="color: red;"></span>
     </div>
 
-   
+
     <div class="form-group mt-2">
-       <input type="submit" value="Submit" class="btn btn-primary"> 
-       
+        <button type="button" id="submitbtn">Submit</button>
+
     </div>
 
 
@@ -46,8 +45,7 @@
 
 
 
-
-@* <script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
 
 
 <script>
@@ -60,12 +58,14 @@
                 Email: $("#Email").val()
             };
 
+            console.log(data);
+
             $.ajax({
-                url: '/Home/Create',
+                url: '/Home/SerializedJSON',
                 type: 'POST',
                 contentType: 'application/json',
                 //processData: false,  // Prevents jQuery from processing the data because we don't want to change the file.
-                //contentType: false, // these two lines are extra for formdata // if I Set it true then it will not work for File uploading. It will 
+                //contentType: false, // these two lines are extra for formdata // if I Set it true then it will not work for File uploading. It will
                                                                                 // automatically Set the contentType.
                 data: JSON.stringify(data),
                 success: function (response, status, xhr) {
@@ -73,7 +73,7 @@
                     alert('Successfull');
                     window.location.href = '/Home/GetAll';
                 },
-                error: function (req, status, error) { 
+                error: function (req, status, error) {
                     console.error('Error: ', error);
                     alert('Failed');
                 }
@@ -82,6 +82,6 @@
         });
     });
 </script>
- *@
+ 
 
 

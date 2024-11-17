@@ -24,11 +24,45 @@ namespace StudentCRUD.Controllers
 
 
         [HttpPost]
-        public IActionResult Create([FromBody] Student student)
+        public IActionResult Create(Student student)
         {
             student.CreatedAt = DateTime.Now;
             //student.UpdatedAt = DateTime.Now;
           
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    using var transaction = _session.BeginTransaction();
+                    _session.Save(student);
+                    transaction.Commit();
+
+                    return RedirectToAction("GetAll");
+                    //return Json(new { redirectUrl = Url.Action("GetAll") });
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError(string.Empty, "An error occurred while saving the data. Please try again.");
+                    return View("Create");
+                }
+            }
+
+            return View("Create");
+        }
+
+
+        public IActionResult SerializedJSON()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public IActionResult SerializedJSON([FromBody] Student student)
+        {
+            student.CreatedAt = DateTime.Now;
+            //student.UpdatedAt = DateTime.Now;
+
             if (ModelState.IsValid)
             {
                 try
@@ -49,6 +83,9 @@ namespace StudentCRUD.Controllers
 
             return View("Create");
         }
+
+
+
 
 
         public IActionResult GetAll()
