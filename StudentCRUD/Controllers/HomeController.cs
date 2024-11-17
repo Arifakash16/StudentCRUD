@@ -24,7 +24,7 @@ namespace StudentCRUD.Controllers
 
 
         [HttpPost]
-        public IActionResult Create(Student student)
+        public IActionResult Create([FromBody] Student student)
         {
             student.CreatedAt = DateTime.Now;
             //student.UpdatedAt = DateTime.Now;
@@ -37,7 +37,8 @@ namespace StudentCRUD.Controllers
                     _session.Save(student);
                     transaction.Commit();
 
-                    return RedirectToAction("GetAll");
+                    //return RedirectToAction("GetAll");
+                    return Json(new { redirectUrl = Url.Action("GetAll") });
                 }
                 catch (Exception ex)
                 {

@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace StudentCRUD.Models
 {
-    public class CommonModel
+    public abstract class CommonModel
     {
         [Key]
         public virtual int Id { get; set; }
