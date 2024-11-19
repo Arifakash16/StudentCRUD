@@ -4,7 +4,7 @@
     ViewData["Title"] = "SerializedJSON";
 }
 
-<h1>Serialized with JSON</h1>
+<h1>Ajax with SerializedFormJSON</h1>
 
 <form id="StudentSerializedJSON" mehod="post" class="container mt-5">
     <div class="form-group">
@@ -64,9 +64,6 @@
                 url: '/Home/SerializedJSON',
                 type: 'POST',
                 contentType: 'application/json',
-                //processData: false,  // Prevents jQuery from processing the data because we don't want to change the file.
-                //contentType: false, // these two lines are extra for formdata // if I Set it true then it will not work for File uploading. It will
-                                                                                // automatically Set the contentType.
                 data: JSON.stringify(data),
                 success: function (response, status, xhr) {
                     console.log('Success: ', response);

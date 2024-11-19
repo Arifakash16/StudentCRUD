@@ -26,6 +26,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\OPL\source\repos\StudentCRUD\StudentCRUD
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/OPL/source/repos/StudentCRUD/StudentCRUD/Views/Home/AjaxBeginForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBamF4QmVnaW5Gb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/OPL/source/repos/StudentCRUD/StudentCRUD/Views/Home/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -34,12 +38,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/OPL/source/repos/StudentCRUD/StudentCRUD/Views/Home/FormData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGb3JtRGF0YS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/OPL/source/repos/StudentCRUD/StudentCRUD/Views/Home/FormData2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGb3JtRGF0YTIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/OPL/source/repos/StudentCRUD/StudentCRUD/Views/Home/GetAll.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRBbGwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/OPL/source/repos/StudentCRUD/StudentCRUD/Views/Home/GetById.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRCeUlkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/OPL/source/repos/StudentCRUD/StudentCRUD/Views/Home/HtmlBeginForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIdG1sQmVnaW5Gb3JtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/OPL/source/repos/StudentCRUD/StudentCRUD/Views/Home/Index.cshtml]

@@ -1,4 +1,4 @@
-﻿@Model Student
+﻿@model Student
 
 @{
     ViewData["Title"] = "Home Page";
@@ -10,15 +10,18 @@
     <br />
     <a role="button" asp-controller="Home" asp-action="SerializedJSON" class="btn btn-primary">Add Student with SerializeFormJSON</a>
 
-    @* <br />
-    <br />
-    <a role="button" asp-controller="Home" asp-action="Create" class="btn btn-primary">Add Student with FormData</a>
     <br />
     <br />
-    <a role="button" asp-controller="Home" asp-action="Create" class="btn btn-primary">Add Student with Html BeginForm</a>
+    <a role="button" asp-controller="Home" asp-action="FormData" class="btn btn-primary">Add Student with FormData using FormData Method</a>
     <br />
     <br />
-    <a role="button" asp-controller="Home" asp-action="Create" class="btn btn-primary">Add Student with Ajax BeginForm</a>  *@
+    <a role="button" asp-controller="Home" asp-action="FormData2" class="btn btn-primary">Add Student with FormData using Serialize Method</a>
+    <br />
+    <br />
+    <a role="button" asp-controller="Home" asp-action="HtmlBeginForm" class="btn btn-primary">Add Student with Html BeginForm</a>
+    <br />
+    <br />
+    <a role="button" asp-controller="Home" asp-action="AjaxBeginForm" class="btn btn-primary">Add Student with Ajax BeginForm</a>
 
     <br />
     <br />

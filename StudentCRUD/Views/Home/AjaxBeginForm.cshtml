@@ -1,0 +1,46 @@
+﻿@model Student
+@{
+    ViewData["Title"] = "AjaxBeginForm";
+}
+ 
+<h1>Using Ajax BeginForm method</h1>
+@*
+<script src="~/Scripts/jquery-3.x.x.min.js"></script> <!-- Replace with the version you're using -->
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajax-unobtrusive/3.2.6/jquery.unobtrusive-ajax.min.js"></script>
+
+
+@using (Ajax.BeginForm("AjaxBeginForm", "Home", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "resultDiv", OnSuccess = "handleSuccess" }, new { @class = "container mt-5", id = "StudentFormData" }))
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.std_Id, "Student Id", new { @class = "form-label" })
+        @Html.TextBoxFor(model => model.std_Id, new { @class = "form-control", placeholder = "Enter your student Id" })
+        <span asp-validation-for="std_Id" style="color: red;"></span>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, "Name", new { @class = "form-label" })
+        @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Enter your Name" })
+        <span asp-validation-for="Name" style="color: red;"></span>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Age, "Age", new { @class = "form-label" })
+        @Html.TextBoxFor(model => model.Age, new { @class = "form-control", placeholder = "Enter your Age" })
+        <span asp-validation-for="Age" style="color: red;"></span>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email, "Email", new { @class = "form-label" })
+        @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Enter your Email" })
+        <span asp-validation-for="Email" style="color: red;"></span>
+    </div>
+
+    <div class="form-group mt-2">
+        <button type="submit">Submit</button>
+    </div>
+}
+ *@
+

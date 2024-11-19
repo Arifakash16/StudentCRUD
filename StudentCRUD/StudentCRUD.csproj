@@ -9,6 +9,8 @@
   <ItemGroup>
     <PackageReference Include="FluentNHibernate" Version="3.4.0" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
+    <PackageReference Include="Microsoft.jQuery.Unobtrusive.Ajax" Version="3.2.6" />
+    <PackageReference Include="Microsoft.jQuery.Unobtrusive.Validation" Version="4.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
     <PackageReference Include="NHibernate" Version="5.5.2" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />

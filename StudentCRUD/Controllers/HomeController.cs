@@ -17,6 +17,7 @@ namespace StudentCRUD.Controllers
         }
 
 
+        //Using Model Binding
         public IActionResult Create()
         {
             return View();
@@ -51,6 +52,8 @@ namespace StudentCRUD.Controllers
         }
 
 
+
+        // Using Ajax with serializedFormJSON
         public IActionResult SerializedJSON()
         {
             return View();
@@ -84,7 +87,91 @@ namespace StudentCRUD.Controllers
             return View("Create");
         }
 
+        
+        // Using Ajax with FormData (approach FormData Method)
+        public IActionResult FormData()
+        {
+            return View();
+        }
 
+
+        [HttpPost]
+        public IActionResult FormData([FromForm] Student student)
+        {
+            student.CreatedAt = DateTime.Now;
+            //student.UpdatedAt = DateTime.Now;
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    using var transaction = _session.BeginTransaction();
+                    _session.Save(student);
+                    transaction.Commit();
+
+                    return RedirectToAction("GetAll");
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError(string.Empty, "An error occurred while saving the data. Please try again.");
+                    return View("Create");
+                }
+            }
+
+            //return View("Create");
+            return BadRequest(new { error = "Invalid form data" });
+        }
+
+
+        // Using Ajax with FormData (approach serialize Method)
+        public IActionResult FormData2()
+        {
+            return View();
+        }
+
+
+
+
+        // Using @Html.BeginForm() method
+        public IActionResult HtmlBeginForm()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public IActionResult HtmlBeginForm(Student student)
+        {
+            student.CreatedAt = DateTime.Now;
+            //student.UpdatedAt = DateTime.Now;
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    using var transaction = _session.BeginTransaction();
+                    _session.Save(student);
+                    transaction.Commit();
+
+                    return RedirectToAction("GetAll");
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError(string.Empty, "An error occurred while saving the data. Please try again.");
+                    return View("Create");
+                }
+            }
+
+            //return View("Create");
+            return BadRequest(new { error = "Invalid form data" });
+        }
+
+
+        // Using @Ajax.BeginForm() method
+        public IActionResult AjaxBeginForm()
+        {
+            return View();
+        }
 
 
 

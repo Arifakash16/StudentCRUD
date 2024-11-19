@@ -1,13 +1,13 @@
 ﻿@model Student
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "FormData";
 }
 
-<h1>Model Binding</h1>
+<h1>Ajax with FormData using FormData method</h1>
 
 
-<form asp-action="Create" asp-controller="Home" id="StudentCreate" mehod="post" class="container mt-5">
+<form id="StudentFormData" class="container mt-5">
     <div class="form-group">
         <label for="std_Id" class="form-label">Student Id</label>
         <input type="text" id="std_Id" name="std_Id" class="form-control" placeholder="Enter your student Id">
@@ -32,12 +32,11 @@
         <span asp-validation-for="Email" style="color: red;"></span>
     </div>
 
-   
-    <div class="form-group mt-2">
-       <input type="submit" value="Submit" class="btn btn-primary"> 
-       
-    </div>
 
+    <div class="form-group mt-2">
+        <button type="submit">Submit</button>
+
+    </div>
 </form>
 
 
@@ -45,34 +44,29 @@
 
 
 
-
-@* <script src="~/lib/jquery/dist/jquery.min.js"></script>
-
-
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
-        $("#submitbtn").click(function () {
-            var data = {
-                std_Id: $("#std_Id").val(),
-                name: $("#Name").val(),
-                Age: parseInt($("#Age").val()),
-                Email: $("#Email").val()
-            };
-
+        $("#StudentFormData").submit(function (event) {
+            event.preventDefault(); //event.preventDefault() is used to stop the default action of an event from happening.
+                                    //For example, in a form submission, it stops the form from reloading the page. 
+                                    //This lets you control what happens when the event occurs, so you can add your own custom behavior.
+            var form = document.getElementById('StudentFormData');
+            var formData = new FormData(form);
+            console.log(formData);
             $.ajax({
-                url: '/Home/Create',
+                url: '/Home/FormData',
                 type: 'POST',
-                contentType: 'application/json',
-                //processData: false,  // Prevents jQuery from processing the data because we don't want to change the file.
-                //contentType: false, // these two lines are extra for formdata // if I Set it true then it will not work for File uploading. It will 
-                                                                                // automatically Set the contentType.
-                data: JSON.stringify(data),
-                success: function (response, status, xhr) {
+                data: formData,
+                processData: false,  // Prevents jQuery from processing the data because we don't want to change the file. if it is true convert data Object into query string.
+                contentType: false, // if I Set it true then it will not work for File uploading. It will
+                                                             // automatically Set the contentType.
+                success: function (response) {
                     console.log('Success: ', response);
                     alert('Successfull');
                     window.location.href = '/Home/GetAll';
                 },
-                error: function (req, status, error) { 
+                error: function (xhr, status, error) {
                     console.error('Error: ', error);
                     alert('Failed');
                 }
@@ -81,6 +75,3 @@
         });
     });
 </script>
- *@
-
-
